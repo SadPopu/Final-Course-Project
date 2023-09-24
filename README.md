@@ -32,7 +32,7 @@ This is the Final Course Project of SadPopu web application named AgriShop.
 ### How do I check the application
 * Open the following web url: [http://127.0.0.1:8000]
 
-* ### How do I get Admin permissions
+### How do I get Admin permissions
 * To get Admin permissions on the app you'll have to do it hardcoded the first time, after you create an acc you'll have to go into your database and in the 'users' table change the roleID of that 'user' to 1 (Admin)
 
 ### Who do I talk to? ###
