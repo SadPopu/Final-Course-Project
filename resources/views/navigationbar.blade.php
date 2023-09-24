@@ -104,11 +104,41 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Checkout</button>
+        @if(Auth::check())
+            <button type="button" class="btn btn-primary" id="checkout-btn">Checkout</button>
+        @else
+            <button type="button" class="btn btn-primary" id="login-btn">Login to Checkout</button>
+        @endif
       </div>
     </div>
   </div>
 </div>
+<!-- Modal -->
+<div class="modal fade" id="paymentMethodModal" tabindex="-1" role="dialog" aria-labelledby="paymentMethodModalLabel" aria-hidden="true" style="margin-top:10%">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="paymentMethodModalLabel">Select Payment Method</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <select id="paymentMethodSelect" class="form-control">
+          <option value="mbway">MBWay- </option>
+          <option value="Transference">Transference</option>
+        </select>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" id="confirmPaymentMethod">Confirm</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 

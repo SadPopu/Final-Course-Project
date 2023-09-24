@@ -635,6 +635,7 @@ footer .inner-content p a {
 	border-bottom: 1px solid #eee;
 	padding-bottom: 10px;
 	margin-bottom: 60px;
+	margin-top: 5%;
 }
 
 .products .filters li {
@@ -1099,7 +1100,8 @@ footer .inner-content p a {
 } 
 
 .users-item img {
-	width: 100%;
+	width: 300px;
+	height: 300px;
 	overflow: hidden;
 }
 .user-item{
@@ -1286,11 +1288,12 @@ footer .inner-content p a {
 	background-color: green;
 	color: white;
 	margin-bottom: 2%;
+	margin-top: 5%;
 	
 }
 
 #createitem{
-	width: -moz-available;
+	width: 100%;
 } 
   
 #profile-pic {

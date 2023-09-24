@@ -68,7 +68,6 @@ class LoginController extends Controller
             }
             return redirect()->back()->withErrors($errorMsg);
         }
-    
         $userid = 2;
         User::create([
             'username' => $data['username'],
@@ -82,7 +81,7 @@ class LoginController extends Controller
             'address' => $data['address'],
             'postalCode' => $data['postalCode'],
             'locality' => $data['locality'],
-            'src' => 'null',
+            'src' => '/storage/images/1679682585Sample_User_Icon.png',
             'roleID' => $userid
         ]);
         
@@ -97,6 +96,7 @@ class LoginController extends Controller
             'name'     => 'required',
             'surname'=> 'required',
             'email'=> 'required',
+            'IBAN' => 'required',
             'NIF' => 'required',
             'phoneNumber' => 'required',
             'address' => 'required',
@@ -104,6 +104,7 @@ class LoginController extends Controller
             'locality' => 'required'
 
         ]);
+        
         $data = $request->all();
         
         if ($request->hasFile('src')) {
@@ -120,6 +121,7 @@ class LoginController extends Controller
             'name'     => $data['name'],
             'surname'=> $data['surname'],
             'email'=> $data['email'],
+            'IBAN' => $data['IBAN'],
             'NIF' => $data['NIF'],
             'phoneNumber' => $data['phoneNumber'],
             'address' => $data['address'],
@@ -221,6 +223,7 @@ public function confirmDelete($id)
                 'name'     => 'required',
                 'surname'=> 'required',
                 'email'=> 'required',
+                'IBAN'=> 'required',
                 'NIF' => 'required',
                 'phoneNumber' => 'required',
                 'address' => 'required',
@@ -243,6 +246,7 @@ public function confirmDelete($id)
                 'name'     => $data['name'],
                 'surname'=> $data['surname'],
                 'email'=> $data['email'],
+                'IBAN' => $data['IBAN'],
                 'NIF' => $data['NIF'],
                 'phoneNumber' => $data['phoneNumber'],
                 'address' => $data['address'],
@@ -261,6 +265,7 @@ public function confirmDelete($id)
                     'name'     => $data['name'],
                     'surname'=> $data['surname'],
                     'email'=> $data['email'],
+                    'IBAN' => $data['IBAN'],
                     'NIF' => $data['NIF'],
                     'phoneNumber' => $data['phoneNumber'],
                     'address' => $data['address'],

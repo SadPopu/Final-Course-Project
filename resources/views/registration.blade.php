@@ -53,7 +53,7 @@
 					</div>
 					<label for="IBAN"> IBAN: </label>
 					<div class="form-group mb-3">
-						<input type="IBAN" name="IBAN" class="form-control" />
+						<input type="text" name="IBAN" class="form-control" />
 						@if($errors->has('IBAN'))
 							<span class="text-danger">{{ $errors->first('IBAN') }}</span>
 						@endif

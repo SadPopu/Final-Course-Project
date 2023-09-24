@@ -2,7 +2,7 @@
 @section('content')
 <div class="user">
 <div class="container" id="container-users">
-   <div class="row">
+   <div class="row2">
       <div class="user-item">
          
          <div class="down-content">
@@ -40,6 +40,13 @@
                   <input type="email" name="email" class="form-control" value="{{Auth::user()->email}}"/>
                   @if($errors->has('email'))
                   <span class="text-danger">{{ $errors->first('email') }}</span>
+                  @endif
+               </div>
+               <label for="IBAN"> IBAN: </label>
+               <div class="form-group mb-3">
+                  <input type="IBAN" name="IBAN" class="form-control" value="{{Auth::user()->IBAN}}"/>
+                  @if($errors->has('IBAN'))
+                  <span class="text-danger">{{ $errors->first('IBAN') }}</span>
                   @endif
                </div>
                <label for="NIF"> NIF: </label>

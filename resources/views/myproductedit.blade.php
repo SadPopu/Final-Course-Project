@@ -2,7 +2,7 @@
 @section('content')
 <div class="user">
    <div class="container" id="container-users">
-      <div class="row">
+      <div class="row2">
          <div class="user-item">
             <div class="down-content">
                <form action="{{ route('sample.validate_update_product')}}" method="POST" enctype="multipart/form-data" >

@@ -177,3 +177,69 @@ $(document).on('click', '.increment-quantity', function(e) {
     updateCart();
     updateCartModal();
 });
+
+  $(document).on('click', '#login-btn', function() {
+    window.location.href = "/login";
+});
+
+$(document).on('click', '#checkout-btn', function() {
+
+
+          var totalAmount = getTotalAmount(); 
+  
+          initiateMBWayPayment(totalAmount, function(paymentUrl) {
+           
+            window.location.href = paymentUrl;
+          });
+
+      
+   
+  });
+  
+  function getTotalAmount() {
+    var total = 0;
+    for (var i = 0; i < cart.length; i++) {
+      total += cart[i].price * cart[i].quantity;
+    }
+    return total.toFixed(2);
+  }
+  
+ // Helper function to initiate the MBWay payment
+function initiateMBWayPayment(amount, callback) {
+    // Show payment method modal
+    $('#paymentMethodModal').modal('show');
+}
+
+// Confirm payment method button click event
+$(document).on('click', '#confirmPaymentMethod', function() {
+    // Get selected payment method
+    var paymentMethod = $('#paymentMethodSelect').val();
+
+    // Show message that an email will be sent
+    alert("An email with the payment info will be sent to you.");
+
+    // Store transaction in database
+    $.ajax({
+        url: '/store-transaction', // Replace with the appropriate URL
+        type: 'POST',
+        data: {
+            productID: cart[0].id, // Replace with the actual product ID
+            userID: 'userID', // Replace with the actual user ID
+            transactionAmount: amount,
+            transactionType: paymentMethod
+        },
+        success: function(response) {
+            // Handle success
+            console.log(response);
+        },
+        error: function() {
+            // Handle error
+            console.error('An error occurred while storing the transaction.');
+        }
+    });
+
+    // Hide payment method modal
+    $('#paymentMethodModal').modal('hide');
+});
+
+  

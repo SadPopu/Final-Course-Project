@@ -35,30 +35,22 @@
           <div class="col-md-12">
             <div class="section-heading">
               <h2>Latest Products</h2>
-              <a href="/products">view all products <i class="fa fa-angle-right"></i></a>
+              <a href="/products/1">view all products <i class="fa fa-angle-right"></i></a>
             </div>
           </div>
           @foreach($data as $i)
                   <div class="col-lg-4 col-md-4 all des">
                      <div class="product-item">
-                        <a href="#"><img src={{$i->src}} alt=""></a>
+                        <a ><img src={{$i->src}} alt=""></a>
                         <div class="down-content">
-                           <a href="#">
+                           <a >
                               <h4>{{$i->name}}</h4>
                            </a>
                            <?php 
                               $price = $i->price*$i->iva+$i->price;
                               echo "<h6> $price €</h6>"
                               ?>
-                           <p>{{$i->description}}</p>
-                           <ul class="stars">
-                              <li><i class="fa fa-star"></i></li>
-                              <li><i class="fa fa-star"></i></li>
-                              <li><i class="fa fa-star"></i></li>
-                              <li><i class="fa fa-star"></i></li>
-                              <li><i class="fa fa-star"></i></li>
-                           </ul>
-                           <span>Reviews (12)</span>
+                           <p>{{$i->description}}</p>                       
                         </div>
                      </div>
                   </div>
@@ -113,7 +105,7 @@
                   <p>Keep shopping with us and search your favourite products in our Products page.</p>
                 </div>
                 <div class="col-md-4">
-                  <a href="/products" class="filled-button">Purchase Now</a>
+                  <a href="/products/1" class="filled-button">Purchase Now</a>
                 </div>
               </div>
             </div>

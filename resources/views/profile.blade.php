@@ -20,6 +20,8 @@
                    <ul class="editable" id="surname">{{Auth::user()->surname}}</ul>
                    <h4>NIF</h4>
                    <ul class="editable" id="NIF">{{Auth::user()->NIF}}</ul>
+                   <h4>IBAN</h4>
+                   <ul class="editable" id="NIF">{{Auth::user()->IBAN}}</ul>
                    <h4>email</h4>
                    <ul class="editable" id="email">{{Auth::user()->email}}</ul>
                    <h4>Phone Number</h4>

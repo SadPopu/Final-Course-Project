@@ -24,6 +24,7 @@ class User extends Authenticatable
         'name',
         'surname',
         'email',
+        'IBAN',
         'phoneNumber',
         'address',
         'postalCode',
