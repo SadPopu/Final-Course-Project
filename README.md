@@ -16,7 +16,7 @@ This is the Final Course Project of SadPopu web application named AgriShop.
 
 * change lines 11 to 16 in .env file with your database info
 * If you are running MySQL with XAMPP run the following code on a terminal inside the project directory
-* -C:\xampp\php\php.exe artisan migrate
+* - C:\xampp\php\php.exe artisan migrate
 * If you're using MySQL only just run
 * - php artisan migrate
 * If you see no errors in the terminal its almost all sett to run our application
