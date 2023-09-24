@@ -27,7 +27,7 @@ This is the Final Course Project of SadPopu web application named AgriShop.
 * Run the following cmd in the main directory:
 * - php artisan serve
 * if you're using XAMPP use:
-* - -C:\xampp\php\php.exe artisan serve
+* - C:\xampp\php\php.exe artisan serve
 
 ### How do I check the application
 * Open the following web url: [http://127.0.0.1:8000]
