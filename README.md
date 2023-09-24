@@ -16,22 +16,22 @@ This is the Final Course Project of SadPopu web application named AgriShop.
 
 * change lines 11 to 16 in .env file with your database info
 * If you are running MySQL with XAMPP run the following code on a terminal inside the project directory
- - C:\xampp\php\php.exe artisan migrate
+* - C:\xampp\php\php.exe artisan migrate
 * If you're using MySQL only just run
- - php artisan migrate
+* - php artisan migrate
 * If you see no errors in the terminal its almost all sett to run our application
 * Now, we need to create in our database the roles for the users to do that inside the database run the cmd:
- - INSERT INTO `roles` (`id`, `roleName`, `created_at`, `updated_at`) VALUES ('1', 'Admin', NULL, NULL), ('2', 'Customer', NULL, NULL);
+* - INSERT INTO `roles` (`id`, `roleName`, `created_at`, `updated_at`) VALUES ('1', 'Admin', NULL, NULL), ('2', 'Customer', NULL, NULL);
 * With all sett upp we just need to link our directory to let the application to get images uploaded by the user. To do that run the cmd:
- - C:\xampp\php\php.exe artisan storage:link
+* - C:\xampp\php\php.exe artisan storage:link
 * If you're not using XAMPP run this one: 
- - php artisan storage:link
+* - php artisan storage:link
 
 ### How do I start the application
 * Run the following cmd in the main directory:
- - php artisan serve
+* - php artisan serve
 * if you're using XAMPP use:
- - C:\xampp\php\php.exe artisan serve
+* - C:\xampp\php\php.exe artisan serve
 
 ### How do I check the application
 * Open the following web url: [http://127.0.0.1:8000]
