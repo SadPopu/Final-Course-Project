@@ -18,7 +18,7 @@
     <link rel="stylesheet" href="{{ asset('assets/css/agrishop.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/owl.css') }}">
     <script>window.APP_BASE = "{{ rtrim(url('/'), '/') }}";</script>
-    <link rel="icon" type="image/x-icon" href="{{ asset(\'storage/images/logo.jpg\') }}">
+    <link rel="icon" type="image/x-icon" href="{{ asset('storage/images/logo.jpg') }}">
   </head>
 
   <body>
@@ -169,7 +169,7 @@
     <script src="{{ asset('assets/js/slick.js') }}"></script>
     <script src="{{ asset('assets/js/isotope.js') }}"></script>
     <script src="{{ asset('assets/js/accordions.js') }}"></script>
-    <script src="{{ asset(\'assets/js/cart.js\') }}"></script>
+    <script src="{{ asset('assets/js/cart.js') }}"></script>
 
     <script language = "text/Javascript"> 
       cleared[0] = cleared[1] = cleared[2] = 0; //set a cleared flag for each field

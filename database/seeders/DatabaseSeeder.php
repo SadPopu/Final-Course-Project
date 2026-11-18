@@ -50,18 +50,19 @@ class DatabaseSeeder extends Seeder
             ]], ['id']);
         }
 
-        $categories = ['Fruit', 'Vegetables', 'Tools', 'Seeds'];
+        // As fotos vêm do template do projeto (roupa de campo e artesanato).
+        $categories = ['Workwear', 'Knitwear', 'Handmade', 'Seeds'];
         foreach ($categories as $i => $name) {
             DB::table('categories')->upsert([['id' => $i + 1, 'name' => $name, 'created_at' => $now, 'updated_at' => $now]], ['id']);
         }
 
         $products = [
-            ['Fresh apples', 1.99, 1, 'Crunchy apples from the Douro valley, sold by the kilo.'],
-            ['Organic carrots', 1.49, 2, 'Locally grown organic carrots, harvested this week.'],
-            ['Garden hoe', 18.90, 3, 'Steel garden hoe with a wooden handle.'],
-            ['Tomato seeds', 2.50, 4, 'Pack of heirloom tomato seeds, about 50 seeds.'],
-            ['Potatoes 5kg', 4.99, 2, 'Bag of white potatoes, ideal for cooking.'],
-            ['Pruning shears', 12.50, 3, 'Sharp pruning shears for vines and fruit trees.'],
+            ['Work boots', 59.90, 1, 'Waterproof leather boots for long days in the field.'],
+            ['Field jacket', 74.50, 1, 'Warm cotton jacket with hood, made for cold mornings.'],
+            ['Wool scarves', 19.90, 2, 'Pack of two hand-knitted wool scarves.'],
+            ['Knitted snowmen', 12.00, 3, 'Pair of handmade knitted snowmen from local artisans.'],
+            ['Wool sweater', 39.90, 2, 'Thick striped sweater knitted with sheep wool.'],
+            ['Tree ornament', 6.50, 3, 'Handmade felt ornament for the Christmas tree.'],
         ];
         foreach ($products as $i => [$name, $price, $category, $description]) {
             $image = sprintf('images/product_%02d.jpg', $i + 1);
@@ -71,7 +72,7 @@ class DatabaseSeeder extends Seeder
                 'id' => $i + 1,
                 'name' => $name,
                 'price' => $price,
-                'iva' => 23,
+                'iva' => 0.23,
                 'categoryID' => $category,
                 'userID' => 2,
                 'src' => '/storage/'.$image,

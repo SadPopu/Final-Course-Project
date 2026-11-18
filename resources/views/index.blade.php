@@ -86,7 +86,7 @@
           </div>
           <div class="col-md-6">
             <div class="right-image">
-              <img src="{{ asset(\'assets/images/feature-image.jpg\') }}" alt="">
+              <img src="{{ asset('assets/images/feature-image.jpg') }}" alt="">
             </div>
           </div>
         </div>

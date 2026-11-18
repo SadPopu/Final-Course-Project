@@ -17,6 +17,6 @@
    </div>
 </div>
 </div>
-<script src="{{ asset(\'assets/js/404.js\') }}"></script>
+<script src="{{ asset('assets/js/404.js') }}"></script>
 
 @endsection ('content')
