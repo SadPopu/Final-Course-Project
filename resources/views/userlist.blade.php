@@ -7,7 +7,7 @@
          @foreach($data as $i)
          <div class="col-lg-4 col-md-4 all des">
                         <div class="users-item">
-                           <a href="#"><img src={{$i->src}} alt=""></a>
+                           <a href="#"><img src="{{ url($i->src) }}" alt=""></a>
                            <div class="down-content">
                               <a href="#">
                                  <h4>{{$i->username}}</h4>

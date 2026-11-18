@@ -23,7 +23,7 @@
                   @foreach($data as $i)
                   <div class="col-lg-4 col-md-4 all des">
                      <div class="product-item">
-                        <a href='{{ route('productedit',['id' => $i->id] ) }}'><img src='{{$i->src}}' alt=""></a>
+                        <a href='{{ route('productedit',['id' => $i->id] ) }}'><img src="{{ url($i->src) }}" alt=""></a>
                         <div class="down-content">
                            <a href="#">
                               <h4>{{$i->name}}</h4>
@@ -56,49 +56,49 @@
   
     
     @if ($currentPage > 1)
-      <a href="{{ '/myProducts/'. ($currentPage - 1) }}">«</a>
+      <a href="{{ url('myProducts/'. ($currentPage - 1)) }}">«</a>
     @endif
     
     
     @if ($maxPages > 5 && $currentPage > 3)
-      <a href="{{ '/myProducts/'. '1' }}">1</a>
+      <a href="{{ url('myProducts/'. '1') }}">1</a>
       
       <span>...</span>
     @endif
     
     
     @if ($currentPage > 2)
-      <a href="{{ '/myProducts/'. ($currentPage - 2) }}">{{ $currentPage - 2 }}</a>
+      <a href="{{ url('myProducts/'. ($currentPage - 2)) }}">{{ $currentPage - 2 }}</a>
     @endif
     
     
     @if ($currentPage > 1)
-      <a href="{{ '/myProducts/'. ($currentPage - 1) }}">{{ $currentPage - 1 }}</a>
+      <a href="{{ url('myProducts/'. ($currentPage - 1)) }}">{{ $currentPage - 1 }}</a>
     @endif
     
     
-     <a class="active" href="{{ '/myProducts/'. $currentPage }}">{{ $currentPage }}</a>
+     <a class="active" href="{{ url('myProducts/'. $currentPage) }}">{{ $currentPage }}</a>
     
    
     @if ($currentPage < $maxPages)
-      <a href="{{ '/myProducts/'. ($currentPage + 1) }}">{{ $currentPage + 1 }}</a>
+      <a href="{{ url('myProducts/'. ($currentPage + 1)) }}">{{ $currentPage + 1 }}</a>
     @endif
     
    
     @if ($currentPage < $maxPages - 1)
-      <a href="{{ '/myProducts/'. ($currentPage + 2) }}">{{ $currentPage + 2 }}</a>
+      <a href="{{ url('myProducts/'. ($currentPage + 2)) }}">{{ $currentPage + 2 }}</a>
     @endif
     
     
     @if ($maxPages > 5 && $currentPage < $maxPages - 2)
       
       <span>...</span>
-      <a href="{{ '/myProducts/'. $maxPages }}">{{ $maxPages }}</a>
+      <a href="{{ url('myProducts/'. $maxPages) }}">{{ $maxPages }}</a>
     @endif
     
     
     @if ($currentPage < $maxPages)
-      <a href="{{ '/myProducts/'. ($currentPage + 1) }}">»</a>
+      <a href="{{ url('myProducts/'. ($currentPage + 1)) }}">»</a>
     @endif
   
 </div>

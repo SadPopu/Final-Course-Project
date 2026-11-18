@@ -11,7 +11,7 @@
                @method('PUT') 
                <div class="form-group mb-3">
                <h4>Profile Image</h4>
-               <ul href="#">  <img  id="profile-pic" src={{Auth::user()->src}} alt=""> </ul>
+               <ul href="#">  <img  id="profile-pic" src="{{ url(Auth::user()->src) }}" alt=""> </ul>
                <input type="file" name="src" class="form-control" id="resize-image-name">
                </div>
                <div class="form-group mb-3">
@@ -95,5 +95,5 @@
    </div>
 </div>
 </div>
-<script src="/assets/js/profile.js"></script>
+<script src="{{ asset(\'assets/js/profile.js\') }}"></script>
 @endsection ('content')

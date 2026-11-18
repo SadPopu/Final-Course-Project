@@ -10,7 +10,7 @@
                @csrf
                   <h4>Profile Picture</h4>
                   <a>
-                  <ul href="#">  <img id="profile-pic" src={{Auth::user()->src}} alt=""> </ul>
+                  <ul href="#">  <img id="profile-pic" src="{{ url(Auth::user()->src) }}" alt=""> </ul>
                    <h4>Username</h4>
                    <ul class="editable" id="username">{{Auth::user()->username}}</ul>
                    <a></a>
@@ -42,5 +42,5 @@
    </div>
 </div>
 </div>
-<script src="/assets/js/profile.js"></script>
+<script src="{{ asset(\'assets/js/profile.js\') }}"></script>
 @endsection ('content')

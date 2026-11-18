@@ -63,5 +63,5 @@
    </div>
 </div>
 </div>
-<script src="/assets/js/profile.js"></script>
+<script src="{{ asset(\'assets/js/profile.js\') }}"></script>
 @endsection ('content')

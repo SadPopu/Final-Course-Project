@@ -35,13 +35,13 @@
           <div class="col-md-12">
             <div class="section-heading">
               <h2>Latest Products</h2>
-              <a href="/products/1">view all products <i class="fa fa-angle-right"></i></a>
+              <a href="{{ url('products/1') }}">view all products <i class="fa fa-angle-right"></i></a>
             </div>
           </div>
           @foreach($data as $i)
                   <div class="col-lg-4 col-md-4 all des">
                      <div class="product-item">
-                        <a ><img src={{$i->src}} alt=""></a>
+                        <a ><img src="{{ url($i->src) }}" alt=""></a>
                         <div class="down-content">
                            <a >
                               <h4>{{$i->name}}</h4>
@@ -86,7 +86,7 @@
           </div>
           <div class="col-md-6">
             <div class="right-image">
-              <img src="assets/images/feature-image.jpg" alt="">
+              <img src="{{ asset(\'assets/images/feature-image.jpg\') }}" alt="">
             </div>
           </div>
         </div>
@@ -105,7 +105,7 @@
                   <p>Keep shopping with us and search your favourite products in our Products page.</p>
                 </div>
                 <div class="col-md-4">
-                  <a href="/products/1" class="filled-button">Purchase Now</a>
+                  <a href="{{ url('products/1') }}" class="filled-button">Purchase Now</a>
                 </div>
               </div>
             </div>

@@ -179,7 +179,7 @@ $(document).on('click', '.increment-quantity', function(e) {
 });
 
   $(document).on('click', '#login-btn', function() {
-    window.location.href = "/login";
+    window.location.href = (window.APP_BASE || "") + "/login";
 });
 
 $(document).on('click', '#checkout-btn', function() {

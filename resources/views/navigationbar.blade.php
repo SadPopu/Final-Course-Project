@@ -11,13 +11,14 @@
     <title>AgriShop</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="{{ asset('vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
 
     <!-- CSS Files -->
-    <link rel="stylesheet" href="../assets/css/fontawesome.css">
-    <link rel="stylesheet" href="../assets/css/agrishop.css">
-    <link rel="stylesheet" href="../assets/css/owl.css">
-    <link rel="icon" type="image/x-icon" href="/storage/images/logo.jpg">
+    <link rel="stylesheet" href="{{ asset('assets/css/fontawesome.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/agrishop.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/owl.css') }}">
+    <script>window.APP_BASE = "{{ rtrim(url('/'), '/') }}";</script>
+    <link rel="icon" type="image/x-icon" href="{{ asset(\'storage/images/logo.jpg\') }}">
   </head>
 
   <body>
@@ -37,19 +38,19 @@
     <header class="">
       <nav class="navbar navbar-expand-lg">
         <div class="container">
-          <a class="navbar-brand" href="/"><h2>Agri <em>Shop</em></h2></a>
+          <a class="navbar-brand" href="{{ url('') }}"><h2>Agri <em>Shop</em></h2></a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ml-auto">
               <li class="nav-item active">
-                <a class="nav-link" href="/">Home
+                <a class="nav-link" href="{{ url('') }}">Home
                   <span class="sr-only">(current)</span>
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="/products/1">Our Products</a>
+                <a class="nav-link" href="{{ url('products/1') }}">Our Products</a>
               </li>
             @guest
               <li class="nav-item">
@@ -60,7 +61,7 @@
               </li>
             @else
             <li class="nav-item">
-                <a class="nav-link" href="/myProducts/1">My Products</a>
+                <a class="nav-link" href="{{ url('myProducts/1') }}">My Products</a>
               </li>
             <?php if (Auth::user()->roleID == 1):?>
               <li class='nav-item'>
@@ -158,17 +159,17 @@
     </footer>
 
      <!-- Bootstrap core JavaScript -->
-     <script src="../vendor/jquery/jquery.min.js"></script>
-    <script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+     <script src="{{ asset('vendor/jquery/jquery.min.js') }}"></script>
+    <script src="{{ asset('vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
 
 
     <!-- Additional Scripts -->
-    <script src="../assets/js/custom.js"></script>
-    <script src="../assets/js/owl.js"></script>
-    <script src="../assets/js/slick.js"></script>
-    <script src="../assets/js/isotope.js"></script>
-    <script src="../assets/js/accordions.js"></script>
-    <script src="/assets/js/cart.js"></script>
+    <script src="{{ asset('assets/js/custom.js') }}"></script>
+    <script src="{{ asset('assets/js/owl.js') }}"></script>
+    <script src="{{ asset('assets/js/slick.js') }}"></script>
+    <script src="{{ asset('assets/js/isotope.js') }}"></script>
+    <script src="{{ asset('assets/js/accordions.js') }}"></script>
+    <script src="{{ asset(\'assets/js/cart.js\') }}"></script>
 
     <script language = "text/Javascript"> 
       cleared[0] = cleared[1] = cleared[2] = 0; //set a cleared flag for each field

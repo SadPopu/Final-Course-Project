@@ -11,7 +11,7 @@
                   @foreach($data as $i)
                   <div class="form-group mb-3">
                      <h4>Product Image</h4>
-                     <ul href="#">  <img  id="product-pic" src={{$i->src}} alt=""> </ul>
+                     <ul href="#">  <img  id="product-pic" src="{{ url($i->src) }}" alt=""> </ul>
                      <input type="file" name="src" class="form-control" value="{{$i->src}}"/>
                   </div>
                   <div class="form-group mb-3">
@@ -69,5 +69,5 @@
       </div>
    </div>
 </div>
-<script src="/assets/js/profile.js"></script>
+<script src="{{ asset(\'assets/js/profile.js\') }}"></script>
 @endsection ('content')

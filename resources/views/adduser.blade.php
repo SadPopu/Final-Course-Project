@@ -1,4 +1,4 @@
-<form action="/adduser" method="POST">
+<form action="{{ url('adduser') }}" method="POST">
 	@csrf	
 	<label for="username"> Username: </label>
 	<input type="text" name="username"></br>

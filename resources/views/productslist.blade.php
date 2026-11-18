@@ -24,7 +24,7 @@
                   @foreach($data as $i)
                   <div class="col-lg-4 col-md-4 all des">
                      <div class="product-item" data-filter="{{$i->categoryID}}">
-                        <a href="#"><img src='{{$i->src}}' alt=""></a>
+                        <a href="#"><img src="{{ url($i->src) }}" alt=""></a>
                         <div class="down-content">
                            <a href="#">
                               <h4 class="product-name">{{$i->name}}</h4>
@@ -77,49 +77,49 @@
   
     <!-- Show previous page button if not on the first page -->
     @if ($currentPage > 1)
-      <a href="{{ '/products/'. ($currentPage - 1) }}">«</a>
+      <a href="{{ url('products/'. ($currentPage - 1)) }}">«</a>
     @endif
     
     <!-- Show first page button if there are more than five pages -->
     @if ($maxPages > 5 && $currentPage > 3)
-      <a href="{{ '/products/'. '1' }}">1</a>
+      <a href="{{ url('products/'. '1') }}">1</a>
       <!-- Show ... to indicate skipped pages -->
       <span>...</span>
     @endif
     
     <!-- Show two pages before the current page button if not on the first two pages -->
     @if ($currentPage > 2)
-      <a href="{{ '/products/'. ($currentPage - 2) }}">{{ $currentPage - 2 }}</a>
+      <a href="{{ url('products/'. ($currentPage - 2)) }}">{{ $currentPage - 2 }}</a>
     @endif
     
     <!-- Show one page before the current page button if not on the first page -->
     @if ($currentPage > 1)
-      <a href="{{ '/products/'. ($currentPage - 1) }}">{{ $currentPage - 1 }}</a>
+      <a href="{{ url('products/'. ($currentPage - 1)) }}">{{ $currentPage - 1 }}</a>
     @endif
     
     <!-- Show current page button -->
-     <a class="active" href="{{ '/products/'. $currentPage }}">{{ $currentPage }}</a>
+     <a class="active" href="{{ url('products/'. $currentPage) }}">{{ $currentPage }}</a>
     
     <!-- Show one page after the current page button if not on the last page -->
     @if ($currentPage < $maxPages)
-      <a href="{{ '/products/'. ($currentPage + 1) }}">{{ $currentPage + 1 }}</a>
+      <a href="{{ url('products/'. ($currentPage + 1)) }}">{{ $currentPage + 1 }}</a>
     @endif
     
     <!-- Show two pages after the current page button if not on the last two pages -->
     @if ($currentPage < $maxPages - 1)
-      <a href="{{ '/products/'. ($currentPage + 2) }}">{{ $currentPage + 2 }}</a>
+      <a href="{{ url('products/'. ($currentPage + 2)) }}">{{ $currentPage + 2 }}</a>
     @endif
     
     <!-- Show last page button if there are more than five pages -->
     @if ($maxPages > 5 && $currentPage < $maxPages - 2)
       <!-- Show ... to indicate skipped pages -->
       <span>...</span>
-      <a href="{{ '/products/'. $maxPages }}">{{ $maxPages }}</a>
+      <a href="{{ url('products/'. $maxPages) }}">{{ $maxPages }}</a>
     @endif
     
     <!-- Show next page button if not on the last page -->
     @if ($currentPage < $maxPages)
-      <a href="{{ '/products/'. ($currentPage + 1) }}">»</a>
+      <a href="{{ url('products/'. ($currentPage + 1)) }}">»</a>
     @endif
   
 </div>
@@ -129,6 +129,6 @@
 </div>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
-<script src="/assets/js/filterProducts.js"></script>
+<script src="{{ asset(\'assets/js/filterProducts.js\') }}"></script>
 
 @endsection ('content')
