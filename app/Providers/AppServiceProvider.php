@@ -24,13 +24,13 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        // Permite correr a app dentro de um path (ex.: https://dominio.dev/agrishop):
-        // todos os url(), asset() e redirects passam a incluir o prefixo do APP_URL.
-        $appUrl = rtrim((string) config('app.url'), '/');
-        if ($appUrl !== '') {
-            URL::forceRootUrl($appUrl);
-            if (str_starts_with($appUrl, 'https://')) {
-                URL::forceScheme('https');
+        // Nos pedidos, os url()/asset() seguem o endereço e o prefixo enviados pelo proxy
+        // (X-Forwarded-Host/Proto/Prefix, ver TrustProxies), por isso funcionam em popu.pt e em localhost.
+        // Fora de pedidos (consola) usa o APP_URL, que pode incluir o path (ex.: https://popu.pt/agrishop).
+        if ($this->app->runningInConsole()) {
+            $appUrl = rtrim((string) config('app.url'), '/');
+            if ($appUrl !== '') {
+                URL::forceRootUrl($appUrl);
             }
         }
     }

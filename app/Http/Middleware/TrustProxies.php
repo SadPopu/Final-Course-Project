@@ -9,13 +9,15 @@ class TrustProxies extends Middleware
 {
     /**
      * The trusted proxies for this application.
+     * No portfolio a app só é acessível através do proxy/Traefik, por isso confia em todos.
      *
      * @var array<int, string>|string|null
      */
-    protected $proxies;
+    protected $proxies = '*';
 
     /**
      * The headers that should be used to detect proxies.
+     * Inclui o X-Forwarded-Prefix: a app corre em /agrishop e o proxy tira esse prefixo.
      *
      * @var int
      */
@@ -24,5 +26,6 @@ class TrustProxies extends Middleware
         Request::HEADER_X_FORWARDED_HOST |
         Request::HEADER_X_FORWARDED_PORT |
         Request::HEADER_X_FORWARDED_PROTO |
+        Request::HEADER_X_FORWARDED_PREFIX |
         Request::HEADER_X_FORWARDED_AWS_ELB;
 }
